@@ -1,46 +1,52 @@
 import { Link } from 'react-router'
+import TopNav from './TopNav'
 
 export default function PastDestinations() {
     const pastTrips = []
 
-    return <div style={{ padding: '20px' }}>
-        <h1>Past Destinations</h1>
-        
-        {pastTrips.length === 0 ? (
-            <div style={{ textAlign: 'center', marginTop: '40px' }}>
-                <p>You haven't saved any trips yet</p>
-                <Link to="/">
-                    <button style={{ padding: '10px 20px', cursor: 'pointer' }}>
-                        Plan Your First Trip
-                    </button>
-                </Link>
-            </div>
-        ) : (
-            <div style={{ 
-                display: 'grid', 
-                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                gap: '20px',
-                marginTop: '20px'
-            }}>
-                {pastTrips.map((trip, index) => (
-                    <div 
-                        key={index}
-                        style={{ 
-                            border: '1px solid #ccc', 
-                            padding: '20px',
-                            borderRadius: '8px'
-                        }}
-                    >
-                        <h3>{trip.name}</h3>
-                        <p>{trip.date}</p>
-                        <Link to={`/past-destinations/${trip.id}`}>
-                            <button style={{ cursor: 'pointer' }}>
-                                View Details
+    return (
+        <div className="min-vh-100 d-flex flex-column">
+            <TopNav />
+
+            <div className="container py-5">
+                <div className="text-center mb-5">
+                    <h1 className="display-5 fw-bold text-white">Past Destinations</h1>
+                    <p className="lead" style={{ color: '#b0b0b0' }}>Your travel history.</p>
+                </div>
+
+                {pastTrips.length === 0 ? (
+                    <div className="card mx-auto text-center p-5 shadow-lg" style={{ maxWidth: '600px' }}>
+                        <div className="mb-3 display-1 opacity-25">🛫</div>
+                        <h3 className="mb-3 text-white">No trips saved yet</h3>
+                        <p className="mb-4" style={{ color: '#b0b0b0' }}>
+                            You haven't finalized any trips yet.
+                        </p>
+                        <Link to="/">
+                            <button className="btn btn-gradient btn-lg px-5 rounded-pill">
+                                Plan Your First Trip
                             </button>
                         </Link>
                     </div>
-                ))}
+                ) : (
+                    <div className="row row-cols-1 row-cols-md-3 g-4">
+                        {pastTrips.map((trip, index) => (
+                            <div className="col" key={index}>
+                                <div className="card h-100">
+                                    <div className="card-body">
+                                        <h5 className="card-title text-white">{trip.name}</h5>
+                                        <p className="card-text" style={{ color: '#b0b0b0' }}>{trip.date}</p>
+                                    </div>
+                                    <div className="card-footer">
+                                        <button className="btn btn-outline-secondary w-100 text-white border-secondary">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
-        )}
-    </div>
+        </div>
+    )
 }

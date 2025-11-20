@@ -1,50 +1,69 @@
-export default function Itinerary() {
-    const handleDownload = () => {
-        console.log('Download itinerary')
-    }
+import { Link } from 'react-router'
+import TopNav from './TopNav'
 
-    const handleSendToAgent = () => {
-        console.log('Send to travel agent')
-    }
+export default function Itinerary() {
+    const handleDownload = () => console.log('Download')
+    const handleSend = () => console.log('Send')
 
     return (
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-        <h1>Your Travel Itinerary</h1>
+        <div className="min-vh-100 d-flex flex-column">
+            <TopNav />
 
-        <div style={{ marginBottom: '30px' }}>
-            <h2>Trip Overview</h2>
-            <p>Destinations selected will be displayed here</p>
-        </div>
+            <div className="container py-5" style={{ maxWidth: '900px' }}>
+                <div className="d-flex justify-content-between align-items-center mb-4">
+                    <h1 className="fw-bold text-white">Your Itinerary</h1>
+                    <Link to="/" className="btn btn-outline-secondary btn-sm text-white border-secondary">
+                        &larr; Back to Map
+                    </Link>
+                </div>
 
-        <div style={{ marginBottom: '30px' }}>
-            <h2>Activities & Attractions</h2>
-            <p>Selected activities organized by city/day will go here</p>
-        </div>
+                {/* Overview Card */}
+                <div className="card mb-4 shadow-sm">
+                    <div className="card-header py-3">
+                        <h5 className="mb-0 fw-bold text-white">Trip Overview</h5>
+                    </div>
+                    <div className="card-body">
+                        {/* Using custom color to ensure visibility */}
+                        <p style={{ color: '#b0b0b0', fontStyle: 'italic' }}>
+                            Destinations selected will be displayed here...
+                        </p>
+                    </div>
+                </div>
 
-        <div style={{ marginBottom: '30px' }}>
-            <h2>Custom Activities</h2>
-            <button style={{ padding: '10px 20px', cursor: 'pointer' }}>
-            Add Custom Activity
-            </button>
-        </div>
+                {/* Activities Card */}
+                <div className="card mb-4 shadow-sm">
+                    <div className="card-header py-3">
+                        <h5 className="mb-0 fw-bold text-white">Activities & Attractions</h5>
+                    </div>
+                    <div className="card-body">
+                        <p style={{ color: '#b0b0b0' }}>
+                            Selected activities organized by city/day will go here.
+                        </p>
+                    </div>
+                </div>
 
-        <div style={{ display: 'flex', gap: '10px' }}>
-            <button
-            onClick={handleDownload}
-            style={{ padding: '10px 20px', cursor: 'pointer' }}
-            >
-            Download Itinerary
-            </button>
-            <button
-            onClick={handleSendToAgent}
-            style={{ padding: '10px 20px', cursor: 'pointer' }}
-            >
-            Send to Travel Agent
-            </button>
-            <button style={{ padding: '10px 20px', cursor: 'pointer' }}>
-            Save to Past Destinations
-            </button>
-        </div>
+                {/* Custom Activity Button */}
+                <div className="card mb-4 bg-transparent p-4 text-center" style={{ border: '1px dashed #444' }}>
+                    <div>
+                        <button className="btn btn-outline-secondary text-white border-secondary">
+                            + Add Custom Activity
+                        </button>
+                    </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="d-flex flex-wrap gap-3 justify-content-end pt-4">
+                    <button onClick={handleDownload} className="btn btn-outline-secondary text-white border-secondary">
+                        Download PDF
+                    </button>
+                    <button onClick={handleSend} className="btn btn-outline-secondary text-white border-secondary">
+                        Send to Agent
+                    </button>
+                    <button className="btn btn-gradient px-4">
+                        Save Trip
+                    </button>
+                </div>
+            </div>
         </div>
     )
 }

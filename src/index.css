@@ -1,68 +1,127 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* --- COLORS --- */
+  --bg-body: #121212;
+  --bg-panel: #1e1e1e;
+  --border-color: #333333;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* --- TEXT --- */
+  --text-main: #ffffff;
+  /* Pure White */
+  --text-secondary: #b0b0b0;
+  /* Bright Silver (Readable on dark) */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* --- GRADIENT --- */
+  --brand-gradient: linear-gradient(135deg, #00f260 0%, #0575e6 100%);
+}
+
+/* RESET */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* --- 1. THE GRADIENT UTILITIES (Fixed) --- */
+.text-gradient {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  /* Fallback */
+  font-weight: 800;
+  /* Bold to make gradient visible */
+}
+
+.btn-gradient {
+  background: var(--brand-gradient) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* --- 2. TEXT COLOR ENFORCEMENT --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-main) !important;
+}
+
+p,
+span,
+div,
+li {
+  color: var(--text-main);
+  /* Default to white */
+}
+
+/* Force "Muted" text to be Silver, NOT Dark Grey */
+.text-muted,
+.text-secondary,
+small {
+  color: var(--text-secondary) !important;
+}
+
+/* --- 3. NAVBAR OVERRIDES --- */
+/* This fixes the dark grey nav text */
+.navbar-brand {
+  color: var(--text-main) !important;
+}
+
+.nav-link {
+  color: var(--text-secondary) !important;
+  /* Inactive links are silver */
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--text-main) !important;
+  /* Hover turns white */
+}
+
+/* --- 4. COMPONENT STYLING --- */
+.card {
+  background-color: var(--bg-panel) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.card-header {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.card-footer {
+  background-color: transparent !important;
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.list-group-item {
+  background-color: transparent !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-main) !important;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  color: #6ea8fe;
+  text-decoration: none;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Sidebar */
+.sidebar-dark {
+  background-color: var(--bg-panel);
+  border-right: 1px solid var(--border-color);
 }

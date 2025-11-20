@@ -29,13 +29,12 @@ export default function AboutMe() {
                                 </h1>
 
                                 <p className="lead mb-4 text-white">
-                                    We make travel planning simple, visual, and beautiful.
+                                    We make travel planning easier than ever.
                                 </p>
 
                                 <p className="mb-5" style={{ color: '#b0b0b0', fontSize: '1.1rem', lineHeight: '1.8' }}>
-                                    Our interactive planner allows you to explore Europe, select your ideal stops,
-                                    and build a professional itinerary in minutes. Whether you are planning a
-                                    solo backpacking trip or a family vacation, we help you organize your journey.
+                                    Our interactive planner allows you to explore Europe and easily pick your favorite destinations,
+                                    allowing you to build an interactive, professional itenerary with the click of a button.
                                 </p>
 
                                 <Link to="/">

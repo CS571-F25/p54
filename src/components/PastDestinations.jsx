@@ -1,7 +1,6 @@
 import { Link } from 'react-router'
 
 export default function PastDestinations() {
-    // This would normally come from state management or backend
     const pastTrips = []
 
     return <div style={{ padding: '20px' }}>

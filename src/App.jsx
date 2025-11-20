@@ -6,14 +6,16 @@ import Itinerary from './components/Itinerary'
 import PastDestinations from './components/PastDestinations'
 
 function App() {
-  return <HashRouter>
-    <Routes>
-      <Route path="/" element={<Home/>}></Route>
-      <Route path="/about" element={<About/>}></Route>
-      <Route path="/itinerary" element={<Itinerary/>}></Route>
-      <Route path="/past-destinations" element={<PastDestinations/>}></Route>
-    </Routes>
-  </HashRouter>
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/itinerary" element={<Itinerary />} />
+        <Route path="/past-destinations" element={<PastDestinations />} />
+      </Routes>
+    </HashRouter>
+  )
 }
 
 export default App

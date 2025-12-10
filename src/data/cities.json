@@ -1,0 +1,170 @@
+[
+  {
+    "name": "London",
+    "country": "United Kingdom",
+    "position": { "lat": 51.5074, "lng": -0.1278 },
+    "tagline": "Historic streets, theatre nights, and riverside walks.",
+    "highlights": ["West End shows", "Thames river cruise", "Borough Market"],
+    "imageUrl": "https://images.unsplash.com/photo-1486299267070-83823f5448dd?q=80&w=3871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Amsterdam",
+    "country": "Netherlands",
+    "position": { "lat": 52.3676, "lng": 4.9041 },
+    "tagline": "Bikes, canals, and Golden Age art.",
+    "highlights": ["Canal cruise", "Van Gogh Museum", "Jordaan stroll"],
+    "imageUrl": "https://images.unsplash.com/photo-1459679749680-18eb1eb37418?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Paris",
+    "country": "France",
+    "position": { "lat": 48.8566, "lng": 2.3522 },
+    "tagline": "Romantic boulevards with art, pastries, and Seine sunsets.",
+    "highlights": ["Louvre highlights", "Eiffel Tower", "Montmartre walk"],
+    "imageUrl": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2673&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Nice",
+    "country": "France",
+    "position": { "lat": 43.7102, "lng": 7.262 },
+    "tagline": "French Riviera vibes with beach promenades and hilltop views.",
+    "highlights": ["Promenade des Anglais", "Old Town markets", "Colline du Château"],
+    "imageUrl": "https://images.unsplash.com/photo-1643914729809-4aa59fdc4c17?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Barcelona",
+    "country": "Spain",
+    "position": { "lat": 41.3851, "lng": 2.1734 },
+    "tagline": "Gaudí architecture, tapas bars, and beachside nights.",
+    "highlights": ["Sagrada Família", "Tapas crawl", "Barceloneta beach"],
+    "imageUrl": "https://images.unsplash.com/photo-1464790719320-516ecd75af6c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Madrid",
+    "country": "Spain",
+    "position": { "lat": 40.4168, "lng": -3.7038 },
+    "tagline": "Art-packed boulevards, lively plazas, and late-night tapas.",
+    "highlights": ["Prado Museum", "Retiro Park", "Plaza Mayor"],
+    "imageUrl": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Rome",
+    "country": "Italy",
+    "position": { "lat": 41.9028, "lng": 12.4964 },
+    "tagline": "Ancient ruins meet espresso-fueled piazzas.",
+    "highlights": ["Colosseum tour", "Vatican Museums", "Trastevere evening"],
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1661962723801-1015e61ec340?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Florence",
+    "country": "Italy",
+    "position": { "lat": 43.7696, "lng": 11.2558 },
+    "tagline": "Renaissance masterpieces and Tuscan flavors.",
+    "highlights": ["Uffizi Gallery", "Duomo climb", "Ponte Vecchio sunset"],
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1676289157074-1afc4b1dfdea?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Venice",
+    "country": "Italy",
+    "position": { "lat": 45.4408, "lng": 12.3155 },
+    "tagline": "Labyrinth of canals, bridges, and hidden campos.",
+    "highlights": ["Grand Canal vaporetto", "St. Mark's Square", "Rialto bridge"],
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1661953180092-94e620a0d1ba?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Berlin",
+    "country": "Germany",
+    "position": { "lat": 52.52, "lng": 13.405 },
+    "tagline": "Modern art, layered history, and buzzing nightlife.",
+    "highlights": ["Berlin Wall sites", "Museum Island", "Street food markets"],
+    "imageUrl": "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Munich",
+    "country": "Germany",
+    "position": { "lat": 48.1351, "lng": 11.582 },
+    "tagline": "Beer gardens, Bavarian charm, and alpine day trips.",
+    "highlights": ["Marienplatz", "English Garden", "Neuschwanstein day trip"],
+    "imageUrl": "https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Prague",
+    "country": "Czechia",
+    "position": { "lat": 50.0755, "lng": 14.4378 },
+    "tagline": "Storybook spires, cobbled lanes, and river views.",
+    "highlights": ["Charles Bridge", "Old Town Square", "Prague Castle"],
+    "imageUrl": "https://images.unsplash.com/photo-1519677100203-a0e668c92439?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Vienna",
+    "country": "Austria",
+    "position": { "lat": 48.2082, "lng": 16.3738 },
+    "tagline": "Imperial palaces, coffeehouses, and classical music.",
+    "highlights": ["Schönbrunn Palace", "St. Stephen's Cathedral", "Naschmarkt"],
+    "imageUrl": "https://images.unsplash.com/photo-1519923041107-e4dc8d9193da?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Budapest",
+    "country": "Hungary",
+    "position": { "lat": 47.4979, "lng": 19.0402 },
+    "tagline": "Thermal baths, ruin bars, and Danube panoramas.",
+    "highlights": ["Buda Castle", "Széchenyi Baths", "Parliament at night"],
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1680721310107-46b29d3b1d7f?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Lisbon",
+    "country": "Portugal",
+    "position": { "lat": 38.7223, "lng": -9.1393 },
+    "tagline": "Hilly viewpoints, tile-covered streets, and fado nights.",
+    "highlights": ["Alfama tram ride", "Belém pastries", "Miradouros"],
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1677344289076-b4e8d7325e94?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Copenhagen",
+    "country": "Denmark",
+    "position": { "lat": 55.6761, "lng": 12.5683 },
+    "tagline": "Harborside hygge with bikes, design, and Nordic cuisine.",
+    "highlights": ["Nyhavn", "Tivoli Gardens", "Design District"],
+    "imageUrl": "https://plus.unsplash.com/premium_photo-1691414363231-836e2e1bf0ed?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Stockholm",
+    "country": "Sweden",
+    "position": { "lat": 59.3293, "lng": 18.0686 },
+    "tagline": "Island city of waterfront promenades and cozy old town lanes.",
+    "highlights": ["Gamla Stan", "Vasa Museum", "Djurgården walk"],
+    "imageUrl": "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Dubrovnik",
+    "country": "Croatia",
+    "position": { "lat": 42.6507, "lng": 18.0944 },
+    "tagline": "Walled Adriatic jewel with sea views and stone alleys.",
+    "highlights": ["City walls walk", "Old Port", "Lokrum island"],
+    "imageUrl": "https://images.unsplash.com/photo-1555990793-da11153b2473?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Athens",
+    "country": "Greece",
+    "position": { "lat": 37.9838, "lng": 23.7275 },
+    "tagline": "Ancient ruins atop lively modern boulevards.",
+    "highlights": ["Acropolis", "Plaka", "National Museum"],
+    "imageUrl": "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Edinburgh",
+    "country": "United Kingdom",
+    "position": { "lat": 55.9533, "lng": -3.1883 },
+    "tagline": "Medieval closes, castle views, and festival energy.",
+    "highlights": ["Edinburgh Castle", "Royal Mile", "Arthur's Seat"],
+    "imageUrl": "https://images.unsplash.com/photo-1506377585622-bedcbb027afc?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Dublin",
+    "country": "Ireland",
+    "position": { "lat": 53.3498, "lng": -6.2603 },
+    "tagline": "Literary pubs, live music, and Georgian streets.",
+    "highlights": ["Trinity College", "Temple Bar", "Guinness Storehouse"],
+    "imageUrl": "https://images.unsplash.com/photo-1549918864-48ac978761a4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+]

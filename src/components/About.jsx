@@ -1,4 +1,5 @@
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
+import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 import TopNav from './TopNav'
 
 export default function AboutMe() {
@@ -17,13 +18,11 @@ export default function AboutMe() {
         <div className="d-flex flex-column min-vh-100">
             <TopNav />
 
-            <div className="container py-5">
-                <div className="row justify-content-center">
-                    <div className="col-lg-8">
-                        <div className="card shadow-lg p-5">
-                            <div className="card-body text-center">
-
-                                {/* Full Gradient Header */}
+            <Container className="py-5">
+                <Row className="justify-content-center">
+                    <Col lg={8}>
+                        <Card className="shadow-lg p-5">
+                            <Card.Body className="text-center">
                                 <h1 className="mb-4 display-4" style={gradientStyle}>
                                     About Us
                                 </h1>
@@ -37,24 +36,19 @@ export default function AboutMe() {
                                     allowing you to build an interactive, professional itenerary with the click of a button.
                                 </p>
 
-                                <Link to="/">
-                                    {/* Manual style for button to ensure gradient background works */}
-                                    <button
-                                        className="btn rounded-pill px-5 py-2 text-white fw-bold"
-                                        style={{
-                                            background: "linear-gradient(135deg, #00f260 0%, #0575e6 100%)",
-                                            border: "none",
-                                            boxShadow: "0 4px 15px rgba(0, 242, 96, 0.2)"
-                                        }}
-                                    >
-                                        Start Planning
-                                    </button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                <Button
+                                    as={Link}
+                                    to="/"
+                                    className="rounded-pill px-5 py-2 text-white fw-bold btn-gradient"
+                                    style={{ boxShadow: "0 4px 15px rgba(0, 242, 96, 0.2)" }}
+                                >
+                                    Start Planning
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     )
 }

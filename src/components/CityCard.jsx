@@ -5,13 +5,14 @@ export default function CityCard({ city, onAdd, onClose, isAdded }) {
     if (!city) return null;
 
     const imageSrc = city.imageUrl || `https://source.unsplash.com/600x400/?${encodeURIComponent(city.name)},city`;
+    const imageAlt = city.tagline ? `${city.name}: ${city.tagline}` : `City view of ${city.name}`;
 
     return (
         <Card className="shadow-lg" style={{ minWidth: '320px', maxWidth: '420px' }}>
             <Card.Img
                 variant="top"
                 src={imageSrc}
-                alt={`View of ${city.name}`}
+                alt={imageAlt}
                 style={{ height: '220px', objectFit: 'cover' }}
             />
             <Card.Body>

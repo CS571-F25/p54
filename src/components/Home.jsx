@@ -86,8 +86,8 @@ export default function Home() {
                     <Col md={4} lg={3} className="d-flex flex-column z-1 shadow-lg"
                         style={{ backgroundColor: '#1e1e1e', boxShadow: '4px 0 15px rgba(0,0,0,0.3)' }}>
                         <div className="p-4" style={subtleBorder}>
-                            <h5 className="fw-bold mb-1 text-white">Trip Planner</h5>
-                            <small style={{ color: '#888' }}>Select cities on the map to build your route.</small>
+                            <h1 className="fs-3 fw-bold mb-1 text-white">Trip Planner</h1>
+                            <p className="mb-0 text-secondary small">Select cities on the map to build your route.</p>
                         </div>
 
                         <div className="flex-grow-1 overflow-auto p-3">

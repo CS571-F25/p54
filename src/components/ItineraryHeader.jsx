@@ -29,6 +29,7 @@ export default function ItineraryHeader({ title, onTitleChange }) {
                             onChange={(e) => setTempTitle(e.target.value)}
                             onKeyDown={handleKeyDown}
                             autoFocus
+                            aria-label="Trip title"
                             className="bg-dark text-white border-secondary fs-2 fw-bold"
                         />
                         <Button variant="outline-success" onClick={handleSave}>Save</Button>

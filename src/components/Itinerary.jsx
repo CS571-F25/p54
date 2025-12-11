@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { Container, Card, Button } from 'react-bootstrap'
 import TopNav from './TopNav'
 import AddActivityModal from './AddActivityModal'
@@ -58,23 +58,23 @@ export default function Itinerary() {
 
     const handleSaveTrip = () => {
         if (!trip) return
-        
+
         const finalTrip = { ...trip, activities }
         const stored = localStorage.getItem('pastTrips')
         const pastTrips = stored ? JSON.parse(stored) : []
-        
+
         const existingIndex = pastTrips.findIndex(t => t.id === finalTrip.id)
-        
+
         if (existingIndex >= 0) {
             pastTrips[existingIndex] = finalTrip
         } else {
             pastTrips.push(finalTrip)
         }
-        
+
         localStorage.setItem('pastTrips', JSON.stringify(pastTrips))
-        
+
         localStorage.removeItem('currentItinerary')
-        
+
         navigate('/past-destinations')
     }
 
@@ -85,11 +85,15 @@ export default function Itinerary() {
             <div className="min-vh-100 d-flex flex-column bg-black">
                 <TopNav />
                 <Container className="d-flex flex-column justify-content-center align-items-center flex-grow-1">
-                    <div className="text-secondary text-center">
-                        <h2 className="text-white">No Active Itinerary</h2>
-                        <p>Go to the Planner to start building your trip.</p>
-                        <Button href="/p54/" variant="outline-light">Go to Planner</Button>
-                    </div>
+                    <Card className="mx-auto text-center p-5 border-0 bg-dark shadow-lg" style={{ maxWidth: '600px' }}>
+                        <Card.Body>
+                            <h2 className="text-white">No Active Itinerary</h2>
+                            <p>Go to the Planner to start building your trip.</p>
+                            <Button as={Link} to="/" className="btn-gradient btn-lg px-5 rounded-pill">
+                                Go to Planner
+                            </Button>
+                        </Card.Body>
+                    </Card>
                 </Container>
             </div>
         )
@@ -100,12 +104,12 @@ export default function Itinerary() {
             <TopNav />
 
             <Container className="py-5" style={{ maxWidth: '900px' }}>
-                
+
                 <ItineraryHeader title={trip.name || "My Trip"} onTitleChange={handleUpdateTitle} />
 
-                <TripStats 
-                    cityCount={trip.cities?.length || 0} 
-                    activityCount={totalActivities} 
+                <TripStats
+                    cityCount={trip.cities?.length || 0}
+                    activityCount={totalActivities}
                 />
 
                 <div className="d-grid gap-4">
@@ -120,10 +124,10 @@ export default function Itinerary() {
                                 ) : (
                                     <div className="mb-2">
                                         {activities[city].map((act, idx) => (
-                                            <ActivityItem 
-                                                key={idx} 
-                                                text={act} 
-                                                onDelete={() => handleDeleteActivity(city, idx)} 
+                                            <ActivityItem
+                                                key={idx}
+                                                text={act}
+                                                onDelete={() => handleDeleteActivity(city, idx)}
                                             />
                                         ))}
                                     </div>
@@ -134,8 +138,8 @@ export default function Itinerary() {
                 </div>
 
                 <div className="mt-4 text-center">
-                    <Button 
-                        variant="outline-dark" 
+                    <Button
+                        variant="outline-dark"
                         className="text-secondary w-100 py-3 mb-4"
                         style={{ border: '1px dashed #444' }}
                         onClick={() => setShowModal(true)}
@@ -145,15 +149,15 @@ export default function Itinerary() {
                 </div>
 
                 <div className="d-flex justify-content-between pt-2 border-top border-secondary pt-4">
-                    <Button 
-                        variant="outline-danger" 
+                    <Button
+                        variant="outline-danger"
                         onClick={handleClearTrip}
                         className="border-0"
                     >
                         Clear Itinerary
                     </Button>
-                    <Button 
-                        className="btn-gradient px-5 fw-bold rounded-pill" 
+                    <Button
+                        className="btn-gradient px-5 fw-bold rounded-pill"
                         onClick={handleSaveTrip}
                         size="lg"
                     >
@@ -161,9 +165,9 @@ export default function Itinerary() {
                     </Button>
                 </div>
 
-                <AddActivityModal 
-                    show={showModal} 
-                    onClose={() => setShowModal(false)} 
+                <AddActivityModal
+                    show={showModal}
+                    onClose={() => setShowModal(false)}
                     onSave={handleAddActivity}
                     cities={trip.cities || []}
                 />

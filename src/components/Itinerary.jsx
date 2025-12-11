@@ -88,7 +88,7 @@ export default function Itinerary() {
                     <div className="text-secondary text-center">
                         <h2 className="text-white">No Active Itinerary</h2>
                         <p>Go to the Planner to start building your trip.</p>
-                        <Button href="/#/" variant="outline-light">Go to Planner</Button>
+                        <Button href="/p54/" variant="outline-light">Go to Planner</Button>
                     </div>
                 </Container>
             </div>

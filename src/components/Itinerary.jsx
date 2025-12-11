@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Container, Card, Button, Alert, Row, Col } from 'react-bootstrap'
+import { Container, Card, Button, Alert } from 'react-bootstrap'
 import TopNav from './TopNav'
 import AddActivityModal from './AddActivityModal'
 import ActivityItem from './ActivityItem'
@@ -8,7 +8,7 @@ import TripStats from './TripStats'
 
 export default function Itinerary() {
     const [trip, setTrip] = useState(null)
-    const [activities, setActivities] = useState({}) // Object: { "Paris": ["Louvre", "Cafe"], "London": [] }
+    const [activities, setActivities] = useState({}) 
     const [saveMessage, setSaveMessage] = useState('')
     const [showModal, setShowModal] = useState(false)
 
@@ -18,7 +18,6 @@ export default function Itinerary() {
             try {
                 const parsedTrip = JSON.parse(stored)
                 setTrip(parsedTrip)
-                // If the trip already has activities saved, load them, otherwise start empty
                 setActivities(parsedTrip.activities || {})
             } catch (e) {
                 console.error('Invalid itinerary data', e)
@@ -42,38 +41,51 @@ export default function Itinerary() {
         })
     }
 
+    const handleClearTrip = () => {
+        if (window.confirm("Are you sure you want to clear this itinerary? This cannot be undone.")) {
+            localStorage.removeItem('currentItinerary')
+            setTrip(null)
+            setActivities({})
+        }
+    }
+
     const handleSaveTrip = () => {
         if (!trip) return
         
-        // Merge current activities state into the trip object
         const finalTrip = { ...trip, activities }
-        
         const stored = localStorage.getItem('pastTrips')
         const pastTrips = stored ? JSON.parse(stored) : []
         
-        // Check for duplicates based on ID
         const existingIndex = pastTrips.findIndex(t => t.id === finalTrip.id)
         
         if (existingIndex >= 0) {
-            // Update existing trip
             pastTrips[existingIndex] = finalTrip
             setSaveMessage('Trip updated successfully!')
         } else {
-            // Add new trip
             pastTrips.push(finalTrip)
             setSaveMessage('Trip saved! You can view it in Past Destinations.')
         }
         
         localStorage.setItem('pastTrips', JSON.stringify(pastTrips))
-        
-        // Also update current itinerary in storage so changes persist on refresh
         localStorage.setItem('currentItinerary', JSON.stringify(finalTrip))
     }
 
-    // Calculate total activities for stats
     const totalActivities = Object.values(activities).reduce((acc, curr) => acc + curr.length, 0)
 
-    if (!trip) return <div className="text-white text-center pt-5">Loading...</div>
+    if (!trip) {
+        return (
+            <div className="min-vh-100 d-flex flex-column bg-black">
+                <TopNav />
+                <Container className="d-flex flex-column justify-content-center align-items-center flex-grow-1">
+                    <div className="text-secondary text-center">
+                        <h2 className="text-white">No Active Itinerary</h2>
+                        <p>Go to the Planner to start building your trip.</p>
+                        <Button href="/" variant="outline-light">Go to Planner</Button>
+                    </div>
+                </Container>
+            </div>
+        )
+    }
 
     return (
         <div className="min-vh-100 d-flex flex-column bg-black">
@@ -124,9 +136,15 @@ export default function Itinerary() {
                     </Button>
                 </div>
 
-                <div className="d-flex justify-content-end pt-2">
+                <div className="d-flex justify-content-between pt-2 border-top border-secondary pt-4">
                     <Button 
-                        className="btn-gradient px-5 py-2 fw-bold rounded-pill" 
+                        variant="outline-danger" 
+                        onClick={handleClearTrip}
+                    >
+                        Clear Itinerary
+                    </Button>
+                    <Button 
+                        className="btn-gradient px-5 fw-bold rounded-pill" 
                         onClick={handleSaveTrip}
                         size="lg"
                     >

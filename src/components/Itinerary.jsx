@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Container, Card, Button, Alert } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
+import { Container, Card, Button } from 'react-bootstrap'
 import TopNav from './TopNav'
 import AddActivityModal from './AddActivityModal'
 import ActivityItem from './ActivityItem'
@@ -9,8 +10,8 @@ import TripStats from './TripStats'
 export default function Itinerary() {
     const [trip, setTrip] = useState(null)
     const [activities, setActivities] = useState({})
-    const [saveMessage, setSaveMessage] = useState('')
     const [showModal, setShowModal] = useState(false)
+    const navigate = useNavigate()
 
     useEffect(() => {
         const stored = localStorage.getItem('currentItinerary')
@@ -66,14 +67,15 @@ export default function Itinerary() {
         
         if (existingIndex >= 0) {
             pastTrips[existingIndex] = finalTrip
-            setSaveMessage('Trip updated successfully!')
         } else {
             pastTrips.push(finalTrip)
-            setSaveMessage('Trip saved! You can view it in Destinations.')
         }
         
         localStorage.setItem('pastTrips', JSON.stringify(pastTrips))
-        localStorage.setItem('currentItinerary', JSON.stringify(finalTrip))
+        
+        localStorage.removeItem('currentItinerary')
+        
+        navigate('/past-destinations')
     }
 
     const totalActivities = Object.values(activities).reduce((acc, curr) => acc + curr.length, 0)
@@ -158,12 +160,6 @@ export default function Itinerary() {
                         Save Trip
                     </Button>
                 </div>
-
-                {saveMessage && (
-                    <Alert variant="success" className="mt-4 text-center" onClose={() => setSaveMessage('')} dismissible>
-                        {saveMessage}
-                    </Alert>
-                )}
 
                 <AddActivityModal 
                     show={showModal} 

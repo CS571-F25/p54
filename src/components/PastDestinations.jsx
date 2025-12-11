@@ -42,7 +42,7 @@ export default function PastDestinations() {
 
             <Container className="py-5">
                 <div className="text-center mb-5">
-                    <h1 className="display-5 fw-bold text-white">Destinations</h1>
+                    <h1 className="display-5 fw-bold text-white">My Trips</h1>
                     <p className="lead" style={{ color: '#666' }}>A collection of your planned trips.</p>
                 </div>
 

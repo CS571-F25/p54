@@ -1,0 +1,37 @@
+[
+  {
+    "name": "London",
+    "country": "United Kingdom",
+    "position": { "lat": 51.5074, "lng": -0.1278 },
+    "tagline": "Historic streets, theatre nights, and riverside walks.",
+    "highlights": ["West End shows", "Thames river cruise", "Borough Market"]
+  },
+  {
+    "name": "Paris",
+    "country": "France",
+    "position": { "lat": 48.8566, "lng": 2.3522 },
+    "tagline": "Romantic boulevards with art, pastries, and Seine sunsets.",
+    "highlights": ["Louvre highlights", "Eiffel Tower", "Montmartre walk"]
+  },
+  {
+    "name": "Barcelona",
+    "country": "Spain",
+    "position": { "lat": 41.3851, "lng": 2.1734 },
+    "tagline": "Gaudí architecture, tapas bars, and beachside nights.",
+    "highlights": ["Sagrada Família", "Tapas crawl", "Barceloneta beach"]
+  },
+  {
+    "name": "Rome",
+    "country": "Italy",
+    "position": { "lat": 41.9028, "lng": 12.4964 },
+    "tagline": "Ancient ruins meet espresso-fueled piazzas.",
+    "highlights": ["Colosseum tour", "Vatican Museums", "Trastevere evening"]
+  },
+  {
+    "name": "Berlin",
+    "country": "Germany",
+    "position": { "lat": 52.52, "lng": 13.405 },
+    "tagline": "Modern art, layered history, and buzzing nightlife.",
+    "highlights": ["Berlin Wall sites", "Museum Island", "Street food markets"]
+  }
+]

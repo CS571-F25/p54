@@ -1,8 +1,5 @@
 import { Badge, Stack } from 'react-bootstrap'
 
-/**
- * Displays a city's basic info and highlight tags.
- */
 export default function CityHighlights({ city, showHighlights = true }) {
     if (!city) return null
 

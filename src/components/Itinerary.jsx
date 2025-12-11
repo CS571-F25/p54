@@ -8,7 +8,7 @@ import TripStats from './TripStats'
 
 export default function Itinerary() {
     const [trip, setTrip] = useState(null)
-    const [activities, setActivities] = useState({}) 
+    const [activities, setActivities] = useState({})
     const [saveMessage, setSaveMessage] = useState('')
     const [showModal, setShowModal] = useState(false)
 
@@ -24,6 +24,12 @@ export default function Itinerary() {
             }
         }
     }, [])
+
+    const handleUpdateTitle = (newTitle) => {
+        const updatedTrip = { ...trip, name: newTitle }
+        setTrip(updatedTrip)
+        localStorage.setItem('currentItinerary', JSON.stringify({ ...updatedTrip, activities }))
+    }
 
     const handleAddActivity = (city, activityText) => {
         setActivities(prev => {
@@ -63,7 +69,7 @@ export default function Itinerary() {
             setSaveMessage('Trip updated successfully!')
         } else {
             pastTrips.push(finalTrip)
-            setSaveMessage('Trip saved! You can view it in Past Destinations.')
+            setSaveMessage('Trip saved! You can view it in Destinations.')
         }
         
         localStorage.setItem('pastTrips', JSON.stringify(pastTrips))
@@ -93,7 +99,7 @@ export default function Itinerary() {
 
             <Container className="py-5" style={{ maxWidth: '900px' }}>
                 
-                <ItineraryHeader title={trip.name || "Your Itinerary"} />
+                <ItineraryHeader title={trip.name || "My Trip"} onTitleChange={handleUpdateTitle} />
 
                 <TripStats 
                     cityCount={trip.cities?.length || 0} 
@@ -103,12 +109,12 @@ export default function Itinerary() {
                 <div className="d-grid gap-4">
                     {trip.cities && trip.cities.map((city) => (
                         <Card key={city} className="shadow-lg border-0 bg-dark text-white">
-                            <Card.Header className="py-3 border-secondary d-flex justify-content-between align-items-center" style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
+                            <Card.Header className="py-3 border-0 d-flex justify-content-between align-items-center" style={{ backgroundColor: '#212529' }}>
                                 <h2 className="h4 mb-0 fw-bold">{city}</h2>
                             </Card.Header>
-                            <Card.Body>
+                            <Card.Body className="pt-0">
                                 {(!activities[city] || activities[city].length === 0) ? (
-                                    <p className="text-secondary fst-italic mb-0">No activities added yet.</p>
+                                    <p className="text-secondary fst-italic mb-0 py-2 small">No activities added yet.</p>
                                 ) : (
                                     <div className="mb-2">
                                         {activities[city].map((act, idx) => (
@@ -127,9 +133,9 @@ export default function Itinerary() {
 
                 <div className="mt-4 text-center">
                     <Button 
-                        variant="outline-secondary" 
-                        className="text-white border-secondary border-dashed w-100 py-3 mb-4"
-                        style={{ borderStyle: 'dashed' }}
+                        variant="outline-dark" 
+                        className="text-secondary w-100 py-3 mb-4"
+                        style={{ border: '1px dashed #444' }}
                         onClick={() => setShowModal(true)}
                     >
                         + Add Custom Activity
@@ -140,6 +146,7 @@ export default function Itinerary() {
                     <Button 
                         variant="outline-danger" 
                         onClick={handleClearTrip}
+                        className="border-0"
                     >
                         Clear Itinerary
                     </Button>

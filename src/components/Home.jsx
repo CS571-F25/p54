@@ -33,12 +33,27 @@ export default function Home() {
 
     const handleFinalize = () => {
         if (selectedItems.length === 0) return
+
+        const initialActivities = {}
+
+        selectedItems.forEach(cityName => {
+            const cityData = cities.find(c => c.name === cityName)
+            
+            if (cityData && cityData.highlights) {
+                initialActivities[cityName] = [...cityData.highlights]
+            } else {
+                initialActivities[cityName] = []
+            }
+        })
+
         const trip = {
             id: Date.now(),
             name: 'My Trip',
             cities: selectedItems,
+            activities: initialActivities,
             createdAt: new Date().toISOString()
         }
+        
         localStorage.setItem('currentItinerary', JSON.stringify(trip))
     }
 
@@ -60,7 +75,6 @@ export default function Home() {
         }
     }
 
-    // Define a subtle separator style to replace harsh borders
     const subtleBorder = { borderBottom: '1px solid rgba(255,255,255,0.05)' }
 
     return (
@@ -86,6 +100,7 @@ export default function Home() {
                                         onChange={(e) => setCityInput(e.target.value)}
                                         placeholder="e.g. Madrid"
                                         aria-label="City name"
+                                        className="bg-dark text-white border-secondary"
                                     />
                                     <Button type="submit" variant="secondary">
                                         Add
@@ -111,7 +126,7 @@ export default function Home() {
                                     {selectedItems.map((item, index) => (
                                         <ListGroup.Item
                                             key={index}
-                                            className="d-flex justify-content-between align-items-center px-0"
+                                            className="d-flex justify-content-between align-items-center px-0 bg-transparent"
                                             style={subtleBorder}
                                         >
                                             <span className="fw-medium text-white">{item}</span>

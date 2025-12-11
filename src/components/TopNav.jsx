@@ -18,6 +18,12 @@ export default function TopNav() {
                     <Nav className="ms-auto gap-3">
                         {['/', '/itinerary', '/past-destinations', '/about'].map((path) => {
                             const isActive = location.pathname === path;
+                            let label = '';
+                            if (path === '/') label = 'Planner';
+                            else if (path === '/itinerary') label = 'Itinerary';
+                            else if (path === '/past-destinations') label = 'My Trips';
+                            else label = 'About';
+
                             return (
                                 <Nav.Link
                                     key={path}
@@ -32,9 +38,7 @@ export default function TopNav() {
                                         color: "transparent"
                                     } : { color: "#b0b0b0" }}
                                 >
-                                    {path === '/' ? 'Planner' :
-                                        path === '/itinerary' ? 'Itinerary' :
-                                            path === '/past-destinations' ? 'Past Trips' : 'About'}
+                                    {label}
                                 </Nav.Link>
                             );
                         })}
